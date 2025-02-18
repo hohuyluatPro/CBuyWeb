@@ -19,28 +19,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
   <!-- ScrollMagic Debugging (tùy chọn, nếu muốn hiển thị indicators) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
-  <script>
-    $(function () {  
-    var controller = new ScrollMagic.Controller();
-
-    // Tạo timeline animation
-    var wipeAnimation = gsap.timeline()
-        .fromTo("section.panel.turqoise", {x: "-100%"}, {x: "0%", ease: "none"})
-        .fromTo("section.panel.green", {x: "100%"}, {x: "0%", ease: "none"})
-        .fromTo("section.panel.bordeaux", {y: "-100%"}, {y: "0%", ease: "none"});
-
-    // Tạo ScrollMagic Scene
-    new ScrollMagic.Scene({
-            triggerElement: "#pinContainer",
-            triggerHook: 0,
-            duration: "300%"
-        })
-        .setPin("#pinContainer")
-        .setTween(wipeAnimation)
-        .addIndicators() // Hiển thị debugging indicators
-        .addTo(controller);
-});
-  </script>
+  
 </head>
 <body>
   <app-root></app-root>

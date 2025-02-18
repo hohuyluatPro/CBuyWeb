@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="login-box">
+      <h2>Login</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="loginWithEmail()">
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" formControlName="email">
+        </div>
+        <div class="input-group">
+          <label>Password</label>
+          <input type="password" formControlName="password">
+        </div>
+        <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+        <button type="submit">Login</button>
+      </form>
+      <div class="separator">OR</div>
+      <button (click)="loginWithGoogle()" class="google-btn">Login with Google</button>
+    </div>
+  </div>

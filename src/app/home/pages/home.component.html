@@ -16,12 +16,8 @@
         </div>
         <button class="next" (click)="nextSlide()">❯</button>
       </div>
-      <div id="pinContainer">
-        <section class="panel turqoise">Panel 1</section>
-        <section class="panel green">Panel 2</section>
-        <section class="panel bordeaux">Panel 3</section>
-    </div>
       
+  
       <!-- <div class="features">
         <div class="feature-card">
           <h3>Fast</h3>
@@ -37,5 +33,22 @@
         </div>
       </div> -->
     </section>
+ <body>
+  <div class="container">
+    <h2 class="title">🔥 Món Ăn Signature 🔥</h2>
+    <div class="grid">
+      <div *ngFor="let dish of dishes" class="dish-card">
+        <div class="image-wrapper">
+          <img [src]="dish.image" [alt]="dish.name" class="dish-image" />
+          <div class="overlay">
+            <h3>{{ dish.name }}</h3>
+            <p>{{ dish.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+ </body>
   </div>
  
