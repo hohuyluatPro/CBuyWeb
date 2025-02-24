@@ -1,0 +1,98 @@
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #516685;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+  
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      
+      li {
+        margin-right: 20px;
+        
+        a {
+          color: white;
+          text-decoration: none;
+          font-size: 18px;
+        }
+      }
+    }
+  
+    .auth-container {
+      display: flex;
+      align-items: center;
+      
+      .login-btn {
+        background: #ff9800;
+        border: none;
+        padding: 8px 15px;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+  
+      .user-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+  
+        .logout-btn {
+          background: #f44336;
+          border: none;
+          padding: 5px 10px;
+          color: white;
+          cursor: pointer;
+          border-radius: 5px;
+          font-size: 14px;
+        }
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+        .dropdown-menu {
+          position: absolute;
+          top: 100%;
+          background: rgb(117, 135, 167);
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+          border-radius: 8px;
+          min-width: 150px;
+          z-index: 1000;
+          flex-direction: column;
+        }
+        
+        .dropdown-menu ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        
+        .dropdown-menu li {
+          padding: 10px;
+          cursor: pointer;
+          transition: background 0.3s;
+        }
+        
+        .dropdown-menu li:hover {
+          background: #a6b7ce;
+        }
+       
+      }
+    }
+  }
+  
+  .hidden {
+    transform: translateY(-100%);
+  }
+  

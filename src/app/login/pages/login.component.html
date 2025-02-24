@@ -10,39 +10,53 @@
       <ul class="ads-list">
       <li class="ad-item">
         <img src="/assets/image/chup-san-pham.jpg" alt="Ad 1">
-        <p>Ad Text 1</p>
+        <p>Nhanh chóng</p>
       </li>
       <li class="ad-item">
         <img src="/assets/image/woman-holding-sushi-roll-with-chopsticks-scaled copy.jpg" alt="Ad 2">
-        <p>Ad Text 2</p>
+        <p>Tiện lợi</p>
       </li>
       <li class="ad-item">
         <img src="/assets/image/0r4ltv3ag4i1712914224518.jpg" alt="Ad 3">
-        <p>Ad Text 3</p>
+        <p>Chuyện gì khó - có CBuy</p>
       </li>
       <!-- Add more ad items here -->
     </ul></div>
   <div class="login-box">
-      <h2>Login</h2>
+      <h2>ĐĂNG NHẬP</h2>
       <form [formGroup]="loginForm" (ngSubmit)="loginWithEmail()">
         <div class="input-group">
-          <label>Email</label>
-          <input type="email" formControlName="email">
+          <label>Tên đăng nhập</label>
+          <input type="email"  formControlName="email">
         </div>
         <div class="input-group">
-          <label>Password</label>
+          <label>Mật khẩu</label>
           <input type="password" formControlName="password">
         </div>
         <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
-        <button type="submit">Login</button>
+        <button type="submit">Đăng nhập</button>
       </form>
-      <div class="separator">OR</div>
+      <div class="separator">Hoặc</div>
 
       <button (click)="loginWithGoogle()" class="google-btn">
-        <img src="/assets/image/google.png" alt="Google Logo" class="google-icon"> Login with Google
+        <img src="/assets/image/google.png" alt="Google Logo" class="google-icon"> Đăng nhập bằng tài khoản Google
       </button>
     </div>
-    <div class="side-panel right"></div>
+    <div class="side-panel right"> <ul class="ads-list">
+      <li class="ad-item">
+        <img src="/assets/image/chup-san-pham.jpg" alt="Ad 1">
+        <p>Sale sập sàn - Đón ngàn ưu đãi</p>
+      </li>
+      <li class="ad-item">
+        <img src="/assets/image/woman-holding-sushi-roll-with-chopsticks-scaled copy.jpg" alt="Ad 2">
+        <p>Đa dạng sản phẩm</p>
+      </li>
+      <li class="ad-item">
+        <img src="/assets/image/0r4ltv3ag4i1712914224518.jpg" alt="Ad 3">
+        <p>Chuyện gì khó - Alo ngay CBuy</p>
+      </li>
+      <!-- Add more ad items here -->
+    </ul></div>
   </section>
   <div class="side-panel ended"></div>
   </div>

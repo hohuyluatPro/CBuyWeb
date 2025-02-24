@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="product-detail">
+      <div class="product-images" >
+        <div class="zoom-container" (mousemove)="zoomImage($event)" (mouseleave)="stopZoom()">
+            <img [src]="product.mainImage" class="main-image" />
+            <div class="zoom-box" *ngIf="isZooming" [ngStyle]="zoomStyle"></div>
+          </div>
+        <div class="thumbnail-list">
+          <img *ngFor="let img of product.images" [src]="img" (click)="updateMainImage(img)" class="thumbnail" />
+        </div>
+      </div>
+      <div class="product-info">
+        <h1>{{ product.name }}</h1>
+        <p class="price">{{ product.price | currency:'VND' }}</p>
+        <p class="description">{{ product.description }}</p>
+        <div class="rating">⭐ {{ product.rating }}/5</div>
+        <div class="size-selector">
+          <label for="size">Chọn size:</label>
+          <select [(ngModel)]="selectedSize">
+            <option *ngFor="let size of product.sizes" [value]="size">{{ size }}</option>
+          </select>
+        </div>
+        <div class="quantity-selector">
+          <button (click)="quantity = quantity > 1 ? quantity - 1 : 1">-</button>
+          <input type="number" [(ngModel)]="quantity" min="1" class="input-quantity" />
+          <button (click)="quantity = quantity + 1">+</button>
+        </div>
+        <div class="action-buttons">
+        <button class="add-to-cart" (click)="addToCart()">Thêm vào giỏ hàng</button>
+        <button class="click-buy" (click)="addToCart()">Mua</button>
+        </div>
+      </div>
+    </div>
+    <div class="comments">
+      <h2>Đánh giá sản phẩm</h2>
+      <div *ngFor="let comment of product.comments" class="comment">
+        <strong>{{ comment.user }}</strong>: {{ comment.comment }}
+      </div>
+    </div>
+    <div class="related-products">
+      <h2>Sản phẩm liên quan</h2>
+      <div class="related-list">
+        <div *ngFor="let item of relatedProducts" class="related-item" (click)="viewProduct()">
+          <img [src]="item.image"  class="relate-image"/>
+          <p>{{ item.name }}</p>
+          <p class="price">{{ item.price | currency:'VND' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>

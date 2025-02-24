@@ -1,0 +1,40 @@
+<div class="cart">
+    <h1>{{ shopName }}</h1>
+    <div class="product-list">
+        <div *ngFor="let product of products" class="product">
+            <h3>{{ product.name }}</h3>
+            <img [src]="product.image" alt="Hình sản phẩm">
+            <input type="number" [(ngModel)]="product.quantity" min="1">
+            <select [(ngModel)]="product.size">
+                <option *ngFor="let size of sizes">{{ size }}</option>
+            </select>
+            <select [(ngModel)]="product.color">
+                <option *ngFor="let color of colors">{{ color }}</option>
+            </select>
+            <input type="checkbox" [(ngModel)]="product.selected"> Chọn mua
+            <button (click)="removeProduct(product)">Xóa</button>
+            
+            <!-- Thêm giá chi tiết sản phẩm -->
+            <div class="product-price">
+                Giá: {{ product.price | currency:'VND':true }} x {{ product.quantity }} = 
+                <strong>{{ product.price * product.quantity | currency:'VND':true }}</strong>
+            </div>
+        </div>
+    </div>
+
+    <div class="total-info">
+        <h2>Tổng Bill: {{ getTotalBill() | currency:'VND':true }}</h2>
+        <input type="text" placeholder="Địa chỉ giao hàng" [(ngModel)]="shippingAddress">
+        <textarea placeholder="Ghi chú" [(ngModel)]="notes"></textarea>
+        <input type="text" placeholder="Mã khuyến mãi" [(ngModel)]="promoCode">
+        <h2>Số tiền giảm: {{ discount | currency:'VND':true }}</h2>
+        <h2>Tổng số tiền cần thanh toán: {{ getFinalTotal() | currency:'VND':true }}</h2>
+
+        <h3>Phương thức thanh toán:</h3>
+        <div *ngFor="let method of paymentMethods">
+            <input type="radio" name="payment" [value]="method" [(ngModel)]="selectedPaymentMethod"> {{ method }}<br>
+        </div>
+
+        <button (click)="confirmOrder()">Xác nhận mua hàng</button>
+    </div>
+</div>

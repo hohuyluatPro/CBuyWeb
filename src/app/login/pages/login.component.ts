@@ -21,8 +21,14 @@ export class LoginComponent {
   }
 
   loginWithEmail() {
-    if (this.loginForm.valid) {
+    if (this.loginForm.value.email && this.loginForm.value.password) {
       this.loading = true;
+      this.authService.setUser({
+        name: 'Nguyễn Văn A',
+        avatar: 'https://i.pravatar.cc/40',
+        email: 'nguyenvana@example.com'
+      });
+      window.location.href="/home/home-CBuy";
       this.authService.loginWithEmail(
         this.loginForm.value.email,
         this.loginForm.value.password

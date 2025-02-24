@@ -1,0 +1,22 @@
+<div class="chatbox-container" [class.hidden]="isHidden">
+    <div class="chatbox-header">
+      <span>Chat Support</span>
+      <button (click)="toggleChatbox()">×</button>
+    </div>
+    <div class="chatbox-body">
+        <div *ngFor="let message of messages" 
+             [ngClass]="{'user-message': message.sender === 'user', 'bot-message': message.sender === 'bot'}"
+             class="message">
+          <span>{{ message.text }}</span>
+        </div>
+      </div>
+    <div class="chatbox-footer">
+      <input type="text" [(ngModel)]="newMessage" placeholder="Nhập tin nhắn..." />
+      <button (click)="sendMessage()">Gửi</button>
+    </div>
+  </div>
+  
+  <!-- Nút mở chatbox -->
+  <button class="chatbox-toggle" (click)="toggleChatbox()" *ngIf="isHidden">
+    💬 Chat
+  </button>

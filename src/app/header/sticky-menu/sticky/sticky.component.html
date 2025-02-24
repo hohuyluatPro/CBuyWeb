@@ -1,0 +1,27 @@
+<nav class="menu" [ngClass]="{ 'hidden': isHidden }">
+    <ul>
+      <li><a href="/home/home-CBuy">Trang chủ</a></li>
+      <li><a href="/my-pro/products">Sản phẩm</a></li>
+      <li><a href="#">Nổi bật</a></li>
+      <li><a href="#">Khuyến mãi</a></li>
+      <li><a href="#">Liên hệ</a></li>
+    </ul>
+    <div class="auth-container">
+        <button *ngIf="!user" (click)="login()" class="login-btn">Đăng nhập</button>
+        <div *ngIf="user" class="user-info">
+          <img [src]="user.avatar" alt="User Avatar">
+          <span (click)="toggleDropdown()" class="user-name">{{ user.name }}</span>
+
+          <!-- Dropdown menu -->
+          <div *ngIf="isDropdownVisible" class="dropdown-menu">
+            <ul>
+              <li (click)="navigateToOrders()">📦 Đơn Mua</li>
+              <li (click)="navigateToCart()">🛒 Giỏ Hàng</li>
+              <li (click)="navigateToProfile()">👤 Thông Tin Cá Nhân</li>
+            </ul>
+          </div>
+          <button (click)="logout()" class="logout-btn">Đăng xuất</button>
+        </div>
+        
+      </div>
+  </nav>

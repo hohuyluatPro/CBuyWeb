@@ -1,0 +1,44 @@
+<div class="product-page">
+    <div class="side-panel left-panel">
+      <h3>Filters</h3>
+      <div *ngFor="let filter of filters" class="filter-group">
+        <label>{{ filter.name }}</label>
+        <select [(ngModel)]="selectedFilters[filter.key]" (change)="applyFilters()">
+          <option *ngFor="let option of filter.options" [value]="option">{{ option }}</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="product-content">
+      <h2>Bestsellers</h2>
+      <div class="bestseller-list">
+        <div *ngFor="let product of bestsellers" class="product-card">
+          <img [src]="product.image" alt="{{ product.name }}">
+          <h4>{{ product.name }}</h4>
+          <p>{{ product.price | currency }}</p>
+          <button class="next" (click)="CBuy()">Xem chi tiết</button>
+        </div>
+      </div>
+      
+      <h2>Products</h2>
+      <div class="product-list">
+        <div *ngFor="let product of products" class="product-card">
+          <img [src]="product.image" alt="{{ product.name }}">
+          <h4>{{ product.name }}</h4>
+          <p>{{ product.price | currency }}</p>
+          <button class="next" (click)="CBuy()">Xem chi tiết</button>
+        </div>
+      </div>
+      
+      <div class="pagination">
+        <button (click)="page = page - 1; loadProducts()" [disabled]="page === 1">Previous</button>
+        <button (click)="page = page + 1; loadProducts()">Next</button>
+      </div>
+    </div>
+    
+    <div class="side-panel right-panel">
+      <h3>Promotions</h3>
+      <img src="/assets/image/chup-san-pham.jpg" style="width: 100%;" alt="Ad 1">
+      <p>Sale sập sàn - Đón ngàn ưu đãi</p>
+    </div>
+  </div>

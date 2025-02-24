@@ -1,5 +1,6 @@
 .container {
-  background-image: url("/assets/image/fuji-mountain-s681050722.jpg");
+  // background-image: url("/assets/image/background.jpg");
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,8 +9,16 @@
   background-size: cover;
   background-position: center;
   padding: 20px;
+  background-color: #afd4ec;
 }
-
+// .container::before{
+//   background-image: url("/assets/image/background.jpg");
+//   background-size: cover;
+//   background-position: center;
+//   background-attachment: fixed;
+//   filter: grayscale(90%); /* Chuyển nền thành trắng đen */
+//   z-index: -1; /* Đưa ảnh nền xuống dưới */
+// }
 .hero {
   background-size: cover;
   background-position: center;
@@ -63,12 +72,16 @@ p {
 .right {
   height: 400px;
   border-radius: 4%;
-  background-image: url("/assets/image/0e3d2401733e61c3dc9da66a609f85f0.jpg");
+  overflow-y: auto; /* Allow vertical scrolling */
   margin-right: 10px;
 }
 
+.right::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar in Webkit browsers (Chrome, Safari) */
+}
+
 .ended {
-  width: 1000px;
+  width: 100%;
   border-radius: 4px;
   background-image: url("/assets/image/12270f80d3f516857d009eb21dfdc5d9.jpg");
   margin-top: 10px;
@@ -102,7 +115,7 @@ p {
 
 .login-box {
   font-family: "Dancing Script", cursive; /* Chữ thư pháp */
-  background: #A9CCE3;
+  background: #8baabe;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
