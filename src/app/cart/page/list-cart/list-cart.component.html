@@ -1,8 +1,8 @@
 <div class="cart">
-    <h1>{{ shopName }}</h1>
     <div class="product-list">
         <div *ngFor="let product of products" class="product">
-            <h3>{{ product.name }}</h3>
+            <p>{{ product.shopName }}</p>
+            <p>{{ product.name }}</p>
             <img [src]="product.image" alt="Hình sản phẩm">
             <input type="number" [(ngModel)]="product.quantity" min="1">
             <select [(ngModel)]="product.size">
@@ -21,7 +21,7 @@
             </div>
         </div>
     </div>
-
+<div></div>
     <div class="total-info">
         <h2>Tổng Bill: {{ getTotalBill() | currency:'VND':true }}</h2>
         <input type="text" placeholder="Địa chỉ giao hàng" [(ngModel)]="shippingAddress">

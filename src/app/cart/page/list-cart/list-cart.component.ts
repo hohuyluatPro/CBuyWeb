@@ -12,11 +12,10 @@ export class ListCartComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
-  shopName = 'Tên Chủ Shop';
+
   products = [
-    { name: 'Sản phẩm 1', image: '/assets/image/0r4ltv3ag4i1712914224518.jpg', price: 100000, quantity: 1, size: '', color: '', selected: false },
-    { name: 'Sản phẩm 2', image: '/assets/image/woman-holding-sushi-roll-with-chopsticks-scaled copy.jpg', price: 150000, quantity: 1, size: '', color: '', selected: false },
+    { shopName : 'Tên Chủ Shop', name: 'Sản phẩm 1', image: '/assets/image/0r4ltv3ag4i1712914224518.jpg', price: 100000, quantity: 1, size: '', color: '', selected: false },
+    { shopName : 'Tên Chủ Shop', name: 'Sản phẩm 2', image: '/assets/image/woman-holding-sushi-roll-with-chopsticks-scaled copy.jpg', price: 150000, quantity: 1, size: '', color: '', selected: false },
     // Thêm nhiều sản phẩm nếu cần
 ];
 
